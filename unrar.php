@@ -1,7 +1,7 @@
 <?php
 
-// Place your directory path to your tv series. - Example - /home/tv/The.Blacklist/ leave the three /* there.  So it would look like this /home/tv/The.Blacklist/*/*/*
-	 $files = glob('/home/jackdani/data/plex/test/Legend.Of.The.Seeker/*/*/*.{r*}', GLOB_BRACE);
+// Place your directory path to your tv series.
+	 $files = glob('/your root directory/your tv series name/*/*/*.{r*}', GLOB_BRACE);
 	 foreach ($files as $file) {
 	 	$directory = pathinfo($file, PATHINFO_DIRNAME);
 		if (stripos($file,'.r00') !== false) {
@@ -10,6 +10,6 @@
 		} else {
 		    //do nothing
 		}
-		unlink($file);
+		unlink($file); //deletes all .rar files after extraction, if you don't want that to happen comment out this line.
     }
 ?>
